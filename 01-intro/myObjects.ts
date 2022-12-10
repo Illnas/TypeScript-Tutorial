@@ -33,4 +33,35 @@ function createUsers (user: User): User {
 
 createUsers({name: "", email: "", isActive: false})
 
+
+type Users = {
+    readonly _id: string; //cant manipulate
+    name: string;
+    email: string;
+    isActive: boolean
+    credCardDetails?: number  //optional sign === ?
+}
+
+let myUser: Users = {
+    _id: "1234",
+    name: 'd',
+    email: "h@h",
+    isActive: false
+}
+
+type cardNumber = {
+    cardnumber: string;
+}
+
+type cardDate = {
+    cardDate: string
+}
+
+type cardDetails = cardNumber & cardDate & { // & combines types
+    cvv: number
+}
+
+myUser.email = "n@n"
+/* myUser._id = '2314' */
+
 export {}

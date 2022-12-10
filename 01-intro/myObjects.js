@@ -19,3 +19,10 @@ function createUsers(user) {
     return { name: "", email: "", isActive: false };
 }
 createUsers({ name: "", email: "", isActive: false });
+var myUser = {
+    _id: "1234",
+    name: 'd',
+    email: "h@h",
+    isActive: false
+};
+myUser.email = "n@n";
