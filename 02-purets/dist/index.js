@@ -16,7 +16,8 @@ class User {
         this.email = email;
         this.name = name;
         this.userId = userId;
-        this._courseCount = 1;
+        //private, protected and public are acess modifiers
+        this._courseCount = 1; //protected accessible in this class and other classes that inherit it
         this.city = "Zagreb"; //private marks something not usable outside of its scope
         this.email = email;
         this.name = name;
@@ -35,6 +36,15 @@ class User {
             throw new Error("Course count should be more than 1");
         }
         this._courseCount = courseNum;
+    }
+}
+class SubUser extends User {
+    constructor() {
+        super(...arguments);
+        this.isFamily = true;
+    }
+    changeCourseCount() {
+        this._courseCount = 4;
     }
 }
 const nada = new User("h@nada.com", "Nada", '1234');

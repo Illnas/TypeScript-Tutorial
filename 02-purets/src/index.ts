@@ -16,8 +16,8 @@ console.log("TS is here again!")
 
 
 class User {
-
-    private _courseCount = 1 
+    //private, protected and public are acess modifiers
+    protected _courseCount = 1 //protected accessible in this class and other classes that inherit it
 
      readonly city: string = "Zagreb" //private marks something not usable outside of its scope
     constructor(
@@ -49,6 +49,13 @@ class User {
 
         this._courseCount = courseNum
     } 
+}
+
+class SubUser extends User { //wont acquire private
+    isFamily: boolean = true;
+    changeCourseCount() {
+        this._courseCount = 4
+    }
 }
 
 const nada = new User("h@nada.com", "Nada", '1234')
